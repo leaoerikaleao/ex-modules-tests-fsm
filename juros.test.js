@@ -41,7 +41,7 @@ test('jurosCompostos', () => {
     const jurosCompostosEsperados = 100
     const montanteJurosCompostos = jest.fn()
     montanteJurosCompostos.mockImplementation(() => 1100)
-
+    //função pura injetada
     const jurosCompostos = juros.pure.jurosCompostos({ montanteJurosCompostos })
     const jurosCalc = juros.jurosCompostos(C, i, t)
 
