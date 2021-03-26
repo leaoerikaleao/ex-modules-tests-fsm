@@ -18,12 +18,22 @@ i (juros em decimal) e t (tempo) e retorno o montante para o período, dado pela
 
 const montanteJurosCompostos = (C, i, t) => C * Math.pow((1 + i), t)
 
+/* Exercício 4: juros compostos
+
+O exercício anterior já retorna o montante (capital + juros). Crie uma função em juros.js que retorne somente os juros.
+(ps: para realizar testes unitários de funções que dependam de outras funções - é importante assistir a aula - 
+Injeção de dependências) */
+
+const jurosCompostos = ({ montanteJurosCompostos }) => (C, i, t) => montanteJurosCompostos(C, i, t) - C
+
 module.exports = {
     jurosSimples,
-    montanteTotal: montanteTotal(jurosSimples),
+    montanteTotal: montanteTotal({ jurosSimples }),
     montanteJurosCompostos,
+    jurosCompostos: jurosCompostos({ montanteJurosCompostos }),
     pure: {
-        montanteTotal
+        montanteTotal,
+        jurosCompostos
     }
 }
 

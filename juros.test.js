@@ -1,3 +1,4 @@
+const { jurosCompostos } = require('./juros')
 const juros = require('./juros')
 
 test('jurosSimples', () => {
@@ -21,14 +22,6 @@ test('montanteTotal', () => {
     expect(jurosSimples.mock.calls[0]).toEqual([C, i, t])
     expect(montante).toBe(montanteEsperado)
 })
-test('jurosSimples', () => {
-    const C = 100
-    const i = 0.10
-    const t = 1
-    const jurosEsperados = 10
-    const jurosCalc = juros.jurosSimples(C, i, t)
-    expect(jurosCalc).toBe(jurosEsperados)
-})
 
 test('montanteJurosCompostos', () => {
     const C = 1000
@@ -38,4 +31,21 @@ test('montanteJurosCompostos', () => {
     const montanteCompostosEsperados = 1100
     const montanteCompostosCalc = juros.montanteJurosCompostos(C, i, t)
     expect(montanteCompostosCalc).toBe(montanteCompostosEsperados)
+})
+
+test('jurosCompostos', () => {
+    const C = 1000
+    const i = 0.10
+    const t = 1
+
+    const jurosCompostosEsperados = 100
+    const montanteJurosCompostos = jest.fn()
+    montanteJurosCompostos.mockImplementation(() => 1100)
+
+    const jurosCompostos = juros.pure.jurosCompostos({ montanteJurosCompostos })
+    const jurosCalc = juros.jurosCompostos(C, i, t)
+
+    expect(jurosCalc).toBe(jurosCompostosEsperados)
+
+
 })
