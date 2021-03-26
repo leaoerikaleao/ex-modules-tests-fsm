@@ -17,7 +17,7 @@ node index.js
 npm t
 
 ```
-<h1>DesenvolVido com:</h1> 
+<h1>Desenvolvido com:</h1> 
 <ul>
     <li>Javascript</li>
     <li>Jest</li>
