@@ -18,5 +18,8 @@ npm t
 
 ```
 <h1>DesenvolVido com:</h1> 
-* Javascript
-* Jest
+<ul>
+    <li>Javascript</li>
+    <li>Jest</li>
+</ul>
+
