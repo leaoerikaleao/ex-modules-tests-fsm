@@ -1,6 +1,6 @@
 <h1>Exercícios sobre Módulos e Testes</h1> 
 <a href="https://devpleno.com/" target="_blank">
-    FullStack Master
+    Curso FullStack Master - Dev Pleno
 </a>
 
 
@@ -17,3 +17,6 @@ node index.js
 npm t
 
 ```
+<h1>DesenvolVido com:</h1> 
+* Javascript
+* Jest
